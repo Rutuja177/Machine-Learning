@@ -12,6 +12,8 @@ https://www.geeksforgeeks.org/deep-neural-network-with-l-layers/
 import pickle
 import numpy as np
 
+'''Created a parent class named Layer which defined the forward and backward functions that are used by all layers.
+In this way, we can take advantage of polymorphism to easily compute the forward and backward passes of the entire network.'''
 
 class Layer:
     def __init__(self):
@@ -84,6 +86,7 @@ class Sigmoid(Layer):
     def backward(self, gradient_input):
         return self.outputs  * (1 - self.outputs) * gradient_input
 
+    
 #Hyperbolic Tangent Function
 class Tanh(Layer):
     def __init__(self):
